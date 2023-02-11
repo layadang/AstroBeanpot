@@ -1,8 +1,15 @@
+h1 {
+    font-size: 40px;
+}
+
 .container {
     display: flex;
     justify-content: center;
 }
 
+.wheel {
+    image: url("../../public/wheel.png")
+}
 
 .parent {
     background-image: url("../../public/background.png");
@@ -14,12 +21,13 @@
 
 .nameBox {
     text-align: center;
-    margin-top: 25px;
+    margin-top: 30px;
+    margin-left: 5px;
     background: transparent;
     border-bottom: 3px solid white;
     color: white;
     outline: none;
-    font-size: 20px;
+    font-size: 35px;
     font-style:italic;
 }
 

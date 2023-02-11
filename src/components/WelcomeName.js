@@ -10,7 +10,7 @@ function WelcomeName(props) {
 
     return (
       <div className = "container">
-        {name ? <h1> Hello,</h1> : <h1> Please enter your name: </h1>}
+        {name ? <h1> Welcome to Astro,</h1> : <h1> Please enter your name: </h1>}
         <label>
 
           <input 
