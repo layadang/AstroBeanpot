@@ -4,8 +4,11 @@ import WelcomeName from './components/WelcomeName';
 
 function App() {
   return (
-    <div>
-      <WelcomeName name={'Laya'}/>
+    <div className="parent">
+      <div className="components">  
+        <WelcomeName name={''}/> 
+      </div>
+
     </div>
   );
 }
