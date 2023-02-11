@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 import WelcomeName from './components/WelcomeName';
@@ -12,3 +11,4 @@ function App() {
 }
 
 export default App;
+
