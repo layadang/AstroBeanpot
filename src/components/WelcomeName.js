@@ -9,15 +9,24 @@ function WelcomeName(props) {
   const [name, setName] = useState(props.name);
 
     return (
-      <div>
-        {name ? <h1> Welcome, {name}! </h1> : <h1>Please Enter Your Name </h1>}
+      <div className = "container">
+        {name ? <h1> Hello,</h1> : <h1> Please enter your name: </h1>}
         <label>
 
-          <input type="text" value={name} onChange={e => {
-            setName(e.target.value)
-          } }/>
+          <input 
+            className="nameBox" 
+            type="text" 
+            value={name}
+            size={name.length} 
+            onChange={e => {
+              setName(e.target.value)
+          } }
+            /> 
+
         </label>
+        <h1> ! </h1>
       </div>
+
     );
   };
   
