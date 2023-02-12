@@ -1,5 +1,7 @@
 h1 {
     font-size: 40px;
+    font-family:'Times New Roman', Times, serif;
+    font-style: italic;
 }
 
 .container {
@@ -9,7 +11,9 @@ h1 {
 
 .wheel {
     background-image: url("../../public/wheel.png");
-    background-size: cover;
+    background-size: contain 18;
+    background-repeat: no-repeat;
+    background-position: center;
     height: 100vh;
     width: 100vw;
     color: white;
@@ -27,7 +31,7 @@ h1 {
         transform: rotate(0deg);
     }
     to {
-        transform: rotate(30deg);
+        transform: rotate(360deg);
     }
 }
 
@@ -49,5 +53,7 @@ h1 {
     outline: none;
     font-size: 35px;
     font-style:italic;
+    font-family: 'Times New Roman', Times, serif;
 }
+
 
