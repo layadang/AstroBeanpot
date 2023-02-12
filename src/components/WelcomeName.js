@@ -1,34 +1,38 @@
-import React, { useState } from 'react';
-import "../styles/global.css"
+import React, { useState } from "react";
+import "../styles/WelcomeName.css";
+import WelcomeBirthday from "./WelcomeBirthday";
 
-const handleSubmit = (event, name) => {
-  event.preventDefault();
-}
+const WelcomeName = () => {
+  const [name, setName] = useState("");
+  const [showPrompt, setShowPrompt] = useState(true);
 
-function WelcomeName(props) {
-  const [name, setName] = useState(props.name);
+  const handleKeyUp = (event) => {
+    if (event.key === "Enter") {
+      setShowPrompt(false);
 
-    return (
-      <div className = "container">
-        {name ? <h1> Welcome to Astro,</h1> : <h1> Please enter your name: </h1>}
-        <label>
-
-          <input 
-            className="nameBox" 
-            type="text" 
-            value={name}
-            size={name.length} 
-            onChange={e => {
-              setName(e.target.value)
-          } }
-            /> 
-
-        </label>
-        <h1> ! </h1>
-      </div>
-
-    );
+    }
   };
-  
 
-export default WelcomeName
+  return (
+    <div className="container">
+      {!showPrompt && (
+        <h1>Welcome to Astro, {name}</h1>
+      )}
+      {showPrompt && (
+        <div className="prompt">
+         <p className="prompt-text">Please enter your name and birthday:</p>
+          <input
+            type="text"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            onKeyUp={handleKeyUp}
+            className="input-transparent"
+          />
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default WelcomeName;
+
