@@ -1,9 +1,10 @@
-import React from 'react';
+import "../styles/global.css"
 
 function Wheel() {
-    
     return (
-        <div className="wheel wheel--aries"> 
+
+        <div className="wheelContainer"> 
+            <img class="wheel wheel--aries" src= "wheel.png"/>
 
         </div>
 
