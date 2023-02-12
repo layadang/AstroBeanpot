@@ -4,7 +4,7 @@ This project is a Chrome new tab extension that provides personal horoscope read
 
 _Astro is not hosted on a domain. To launch, follow the instructions below to launch on local device_
 
-*How to launch*
+HOW TO LAUNCH:
 
 1. Download VS Code and Nodejs.
 2. Clone this repository.
