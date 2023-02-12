@@ -3,6 +3,8 @@ import GetUserInfo from "./components/GetUserInfo";
 import { useState, useEffect } from "react";
 import Aztro from "./components/Aztro";
 import GetAstrologicalSign from "./components/GetAstrologicalSign.js";
+import WelcomeName from './components/WelcomeName';
+import Wheel from './components/Wheel';
 
 const App = () => {
   const [birthday, setBirthday] = useState("");
@@ -23,9 +25,14 @@ const App = () => {
    }, []);
 
   return (
-    <div>
-      <GetUserInfo />
-      <GetAstrologicalSign birthday={localStorage.getItem("birthday")} />
+    <div className="parent">
+      <div className="components">
+      <WelcomeName name={''}/> 
+        <Wheel/>
+        <GetUserInfo />
+        <GetAstrologicalSign birthday={localStorage.getItem("birthday")} />
+      </div>
+
 
     </div>
   );
