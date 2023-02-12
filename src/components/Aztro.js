@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "../styles/WelcomeName.css";
 
 const Aztro = ({sign, day}) => {
     const [data, setData] = useState();
@@ -19,16 +20,16 @@ const Aztro = ({sign, day}) => {
 
        if(data) {
          return (
-           <div>
-              You are a {sign} <br />
+      
+            <h2>
+               Current Date: {data.current_date} <br />
                Compatibility: {data.compatibility} <br />
                Lucky Number: {data.lucky_number} <br />
                 Lucky Time: {data.lucky_time} <br />
                Color: {data.color} <br />
-               Date Range: {data.date_range} <br />
-               Mood: {data.mood} <br />
+             Mood: {data.mood} <br />
                Description: {data.description} <br />  
-           </div>
+               </h2>
          );
        }
     
