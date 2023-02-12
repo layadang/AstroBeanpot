@@ -9,6 +9,13 @@ h1 {
     justify-content: center;
 }
 
+.displaySign {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .wheel {
     display: block;
     margin-left: auto;

@@ -19,7 +19,6 @@ const App = () => {
     if (storedBirthday) {
       setAstrologicalSign(GetAstrologicalSign(storedBirthday));
     }
-    const storedSign = localStorage.getItem("sign");
     console.log(localStorage.getItem("sign"));
 
    }, []);
@@ -27,10 +26,12 @@ const App = () => {
   return (
     <div className="parent">
       <div className="components">
-      <WelcomeName name={''}/> 
-        <Wheel/>
-        <GetUserInfo />
+
+        <WelcomeName name={''}/> 
+        <Wheel sign = {astrologicalSign}/>
+        <GetUserInfo/>
         <GetAstrologicalSign birthday={localStorage.getItem("birthday")} />
+
       </div>
 
 

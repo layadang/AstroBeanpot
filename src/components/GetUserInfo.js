@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import GetAstrologicalSign from "./GetAstrologicalSign";
 import Aztro from "./Aztro";
 
-const GetUserInfo = () => {
+function GetUserInfo(props) {
   const [name, setName] = useState("");
   const [birthday, setBirthday] = useState("");
   const [showForm, setShowForm] = useState(true);
@@ -17,13 +17,13 @@ const GetUserInfo = () => {
   };
 
   const handleSubmit = event => {
-    event.preventDefault();
 
     localStorage.setItem("name", name);
     console.log(localStorage.getItem("name"));
 
     localStorage.setItem("birthday", birthday);
-    console.log(localStorage.getItem("birthday"));
+    console.log(localStorage.getItem("birthday")); // CHANGE TO SET
+    props.setBirthday(birthday);
 
     const astrologicalSign = GetAstrologicalSign(birthday);
     localStorage.setItem("sign", astrologicalSign);
@@ -31,21 +31,14 @@ const GetUserInfo = () => {
 
     setShowForm(false);
 
+    event.preventDefault();
+
   };
 
   return (
     <>
       {showForm ? (
         <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              value={name}
-              onChange={handleNameChange}
-            />
-          </div>
           <div>
             <label htmlFor="birthday">Birthday:</label>
             <input
@@ -55,10 +48,12 @@ const GetUserInfo = () => {
               onChange={handleBirthdayChange}
             />
           </div>
-          <button type="submit">Submit</button>
+
+          <button type="submit">Send</button>
+
         </form>
       ) : (
-        <Aztro sign={localStorage.getItem("sign")} day="today"/>
+        <Aztro sign={localStorage.getItem("sign")} day="today"/> // CHANGE TO SET STATUS
       )}
     </>
   );

@@ -20,13 +20,13 @@ const Aztro = ({sign, day}) => {
        if(data) {
          return (
            <div>
-               Current Date: {data.current_date} <br />
+              You are a {sign} <br />
                Compatibility: {data.compatibility} <br />
                Lucky Number: {data.lucky_number} <br />
                 Lucky Time: {data.lucky_time} <br />
                Color: {data.color} <br />
                Date Range: {data.date_range} <br />
-             Mood: {data.mood} <br />
+               Mood: {data.mood} <br />
                Description: {data.description} <br />  
            </div>
          );
