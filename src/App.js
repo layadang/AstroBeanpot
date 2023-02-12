@@ -5,6 +5,7 @@ import Aztro from "./components/Aztro";
 import GetAstrologicalSign from "./components/GetAstrologicalSign.js";
 import WelcomeName from './components/WelcomeName';
 import Wheel from './components/Wheel';
+import WelcomeBirthday from "./components/WelcomeBirthday";
 
 const App = () => {
   const [birthday, setBirthday] = useState("");
@@ -19,6 +20,7 @@ const App = () => {
     if (storedBirthday) {
       setAstrologicalSign(GetAstrologicalSign(storedBirthday));
     }
+    const storedSign = localStorage.getItem("sign");
     console.log(localStorage.getItem("sign"));
 
    }, []);
@@ -26,12 +28,10 @@ const App = () => {
   return (
     <div className="parent">
       <div className="components">
-
-        <WelcomeName name={''}/> 
-        <Wheel sign = {astrologicalSign}/>
-        <GetUserInfo/>
+      <GetUserInfo />
         <GetAstrologicalSign birthday={localStorage.getItem("birthday")} />
 
+      
       </div>
 
 
