@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import GetAstrologicalSign from "./GetAstrologicalSign";
 import Aztro from "./Aztro";
+import WelcomeName from "../styles/WelcomeName.css";
+import Wheel from "./Wheel";
 
-function GetUserInfo(props) {
+const GetUserInfo = () => {
   const [name, setName] = useState("");
   const [birthday, setBirthday] = useState("");
   const [showForm, setShowForm] = useState(true);
@@ -17,13 +19,13 @@ function GetUserInfo(props) {
   };
 
   const handleSubmit = event => {
+    event.preventDefault();
 
     localStorage.setItem("name", name);
     console.log(localStorage.getItem("name"));
 
     localStorage.setItem("birthday", birthday);
-    console.log(localStorage.getItem("birthday")); // CHANGE TO SET
-    props.setBirthday(birthday);
+    console.log(localStorage.getItem("birthday"));
 
     const astrologicalSign = GetAstrologicalSign(birthday);
     localStorage.setItem("sign", astrologicalSign);
@@ -31,16 +33,24 @@ function GetUserInfo(props) {
 
     setShowForm(false);
 
-    event.preventDefault();
-
   };
 
   return (
-    <>
+    <> 
       {showForm ? (
+       
         <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="birthday">Birthday:</label>
+         
+          <div className="prompt">
+         <p className="prompt-text">Please enter your name and birthday:</p>
+          <input
+            type="text"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            className="input-transparent"
+          />
+        </div>
+          <div className="birthday">
             <input
               type="date"
               id="birthday"
@@ -48,13 +58,13 @@ function GetUserInfo(props) {
               onChange={handleBirthdayChange}
             />
           </div>
-
-          <button type="submit">Send</button>
-
+          <button className="submit" type="submit">Submit</button>
         </form>
       ) : (
-        <Aztro sign={localStorage.getItem("sign")} day="today"/> // CHANGE TO SET STATUS
+        <Aztro sign={localStorage.getItem("sign")} day="today"/>
+        
       )}
+      <Wheel />
     </>
   );
 };
