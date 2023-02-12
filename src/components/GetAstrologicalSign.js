@@ -9,6 +9,7 @@ const GetAstrologicalSign = birthday => {
       return "capricorn";
     } else if (month === 1 && day <= 18) {
         localStorage.setItem("sign", "aquarius");
+        console.log("aquarius");
       return "aquarius";
     } else if (month === 2 && day <= 20) {
         localStorage.setItem("sign", "pisces");
@@ -40,7 +41,7 @@ const GetAstrologicalSign = birthday => {
     } else if (month === 11 && day <= 21) {
         localStorage.setItem("sign", "sagittarius");
       return "sagittarius";
-    } 
+    }
   };
 
   export default GetAstrologicalSign;
