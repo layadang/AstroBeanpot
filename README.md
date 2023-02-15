@@ -2,7 +2,7 @@
 
 This project is a Chrome new tab extension that provides personal horoscope readings daily. 
 
-_Astro is not hosted on a domain. To launch, follow the instructions below to launch on local device_
+_Astro is not hosted on a domain as of now. To launch, follow the instructions below to launch on local device_
 
 HOW TO LAUNCH:
 
